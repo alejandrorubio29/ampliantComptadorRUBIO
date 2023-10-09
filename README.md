@@ -49,10 +49,21 @@ override fun onResume() {
 
 En la siguiente captura se aprecia como se muestran los estados nada mas iniciar la app:
 ![image](https://github.com/alejandrorubio29/ampliantComptadorRUBIO/assets/145864071/fd72597f-e217-42f5-9c21-8841af13f28b)
-Como vemos, la secuencia de estados es la esperable, pero comenzando en un estado incorrecto. Según contexto del problema propuesto, esta pérdida de estado puede deberse a un problema de restauración de los datos de la aplicación ante cambios como el giro de pantalla. 
+Como vemos, la secuencia de estados es la esperable, pero comenzando en un estado incorrecto. Según contexto del problema propuesto, esta pérdida de estado puede deberse a un problema de restauración de los datos de la aplicación ante cambios como el giro de pantalla, tal y como se señala en el enunciado. 
+
+Algunos ejemplos de la documentación oficial en que se habla del concepto de guardar las variables o los estados del sistema ante cambios
 https://developer.android.com/topic/libraries/architecture/saving-states?hl=es-419
 
 https://developer.android.com/jetpack/androidx/releases/savedstate?hl=es-419#kts
+
+Tal y como nos sugiere la rúbrica, debemos hacer uso de Bundle. Al final, Bundle es un tipo de objeto que define a savedInstanceState y que permitiría almacenar un valor ante pérdida, ya que es información que el sistema recibe cuando se restaura. 
+
+tal y como vemos aqui: https://stackoverflow.com/questions/6525698/how-to-use-onsavedinstancestate-example-please podemos interactuar con ese Bundle mediante funciones como put.
+Siguiendo el ejemplo, debemos sobreescribir la función asociada al onsavedinstancestate:
+
+![image](https://github.com/alejandrorubio29/ampliantComptadorRUBIO/assets/145864071/63dfab26-3972-407f-8eb1-4f2a4c390cca)
+
+De esta manera, debería solucionarse el problema de la pérdida de datos y restaurar correctamente el valor del contador ante el savedInstanceState
 
 ## 3. Ampliant La Funcionalitat Amb Decrements I Resets
 
