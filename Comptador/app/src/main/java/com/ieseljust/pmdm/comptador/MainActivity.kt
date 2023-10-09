@@ -58,6 +58,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+
         /*
         // Referencia al TextView
         val textViewContador=findViewById<TextView>(R.id.textViewComptador)
@@ -108,6 +110,15 @@ class MainActivity : AppCompatActivity() {
         }
 */
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        // Guardar el estado del contador
+        outState.putInt("comptador", comptador)
+        super.onSaveInstanceState(outState)
+
+
+    }
+
 
     override fun onStart() {
         super.onStart()
