@@ -65,6 +65,11 @@ Siguiendo el ejemplo, debemos sobreescribir la función asociada al onsavedinsta
 
 De esta manera, debería solucionarse el problema de la pérdida de datos y restaurar correctamente el valor del contador ante el savedInstanceState
 
+Comprobarmos el giro y como se mantiene, habiendo añadido el código
+
+<img width="1060" alt="image" src="https://github.com/alejandrorubio29/ampliantComptadorRUBIO/assets/145864071/ee73234e-773b-462e-9bb4-5a662a23cda9">
+
+
 ## 3. Ampliant La Funcionalitat Amb Decrements I Resets
 
 Agregando los botones correspondientes al layout principal
@@ -88,6 +93,9 @@ y añadir los callbacks. La lógica es sencilla, simplemente se actúa sobre la 
             comptador = 0
             textViewContador.setText(comptador.toString())
         }
+        Nota: deliberadamente dejo la posibilidad de contar "en negativo" para que se vea mejor la capacidad de restar. Si hubiera
+        que limitar a restar hasta cero, sería sencillo comprobando que contador != 0
+        
 Como vemos, es efectivo:
 
 <img width="886" alt="image" src="https://github.com/alejandrorubio29/ampliantComptadorRUBIO/assets/145864071/c8039525-57c6-4256-a21f-ace2f32d25d1">
